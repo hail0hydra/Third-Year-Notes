@@ -18,4 +18,4 @@
 
 <br>
 
-    dowload wordpress from [here](wordpress.org)
+dowload wordpress from [here](wordpress.org)

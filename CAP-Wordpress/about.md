@@ -10,7 +10,7 @@
 
 <br>
 
-- When it becamem Open Source?
+- When it became Open Source?
 
 <br>
 

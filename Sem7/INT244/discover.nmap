@@ -1,0 +1,46 @@
+# I filtered it to only Hosts that are up
+#
+# Nmap 7.95 scan initiated Thu Aug 29 09:57:21 2024 as: nmap -sn -vvv -oN discover.nmap 10.35.168.251/20
+Nmap scan report for 10.35.160.0 [host down, received no-response]
+Nmap scan report for 10.35.160.1
+Host is up, received conn-refused (0.011s latency).
+Nmap scan report for 10.35.160.35
+Host is up, received conn-refused (0.0100s latency).
+Nmap scan report for 10.35.160.41
+Host is up, received conn-refused (0.0068s latency).
+Nmap scan report for 10.35.160.49
+Host is up, received conn-refused (0.052s latency).
+Nmap scan report for 10.35.160.51
+Host is up, received conn-refused (0.017s latency).
+Nmap scan report for 10.35.160.54
+Host is up, received conn-refused (0.065s latency).
+Nmap scan report for 10.35.160.56
+Host is up, received conn-refused (0.0100s latency).
+Nmap scan report for 10.35.160.101
+Host is up, received conn-refused (0.065s latency).
+Nmap scan report for 10.35.160.114
+Host is up, received conn-refused (0.023s latency).
+Nmap scan report for 10.35.163.114
+Host is up, received conn-refused (0.022s latency).
+Nmap scan report for 10.35.163.126
+Host is up, received conn-refused (0.024s latency).
+Nmap scan report for 10.35.163.130
+Host is up, received conn-refused (0.014s latency).
+Nmap scan report for 10.35.163.132
+Host is up, received conn-refused (0.020s latency).
+Nmap scan report for 10.35.163.219
+Host is up, received conn-refused (0.0100s latency).
+Nmap scan report for 10.35.163.226
+Host is up, received conn-refused (0.049s latency).
+Nmap scan report for 10.35.167.20
+Host is up, received conn-refused (0.074s latency).
+Nmap scan report for 10.35.168.251
+Host is up, received conn-refused (0.00022s latency).
+Nmap scan report for 10.35.169.57
+Host is up, received conn-refused (0.017s latency).
+Nmap scan report for 10.35.170.105
+Host is up, received conn-refused (0.042s latency).
+Nmap scan report for 10.35.170.207
+Host is up, received conn-refused (2.5s latency).
+Nmap scan report for 10.35.170.212
+Host is up, received conn-refused (0.026s latency).

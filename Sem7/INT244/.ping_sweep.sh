@@ -5,7 +5,10 @@ if [ $# -lt 2 ]; then
     exit 1
 fi
 
-for ip in $(0..255); do
+start=$1
+end=$2
+
+for ip in $(seq $start $end); do
     ping -c 1 $ip > /dev/null 2>&1
     if [ $? -eq 0 ]; then
         echo "\033[42;01mHost $ip is alive\033[0m"

@@ -1,0 +1,9 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+retail.onlinesbi.sbi	TRUE	/retail	FALSE	1999999999	JSESSIONID	0000j6f9vURjuNghjiWd33EZRCm:1ai36mb68
+retail.onlinesbi.sbi	TRUE	/retail	FALSE	1999999999	TS01a4ffff	0137799b192264db5d97702e387362321a714fb9b8b153f6ecc0d3485039806d3c7c1f2ae501964662f650e98e28faf2550932ce5ce4d6a6c331d647bdae98350c6c011a46
+retail.onlinesbi.sbi	TRUE	/	FALSE	1999999999	imc13	0abd7c268dd62ae2236e
+retail.onlinesbi.sbi	TRUE	/	FALSE	1999999999	imc12	7d10bde323d3a1e920fb
+retail.onlinesbi.sbi	TRUE	/	FALSE	1999999999	f5_cspm	1234
+.retail.onlinesbi.sbi	TRUE	/	FALSE	1999999999	TS0160f4ab	0137799b19651dc132f1d5f8195e894e8fa0ae521e926735f64d511cd6265c84fd99e68a1ef95f0dd2a773e16a197a2cbb6dd76b6af3dae09349238531c225d18b3a2eee6e
+

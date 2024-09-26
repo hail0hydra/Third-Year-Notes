@@ -1,0 +1,166 @@
+
+
+
+
+
+
+
+<title>State Bank of India</title>
+
+<!-- Mirrored from retail.onlinesbi.sbi/retail/troublelogindetails.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 18 Sep 2024 05:19:08 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="https://retail.onlinesbi.sbi/sbijava/retail/css/style.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" type="text/javascript" src="https://retail.onlinesbi.sbi/sbijava/retail/js/troubleLogin.js"></script>
+
+<link rel="shortcut icon" href="https://retail.onlinesbi.sbi/sbijava/retail/images/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="https://retail.onlinesbi.sbi/sbijava/retail/css/bootstrap.min-3.4.1.css" type="text/css" />
+<script type="text/javascript" src="https://retail.onlinesbi.sbi/sbijava/retail/js/common/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="https://retail.onlinesbi.sbi/sbijava/retail/js/common/bootstrap.min-3.4.1.js"></script>
+<script type="text/javascript"	src="https://retail.onlinesbi.sbi/sbijava/retail/js/common/enscroll-0.6.2.js"></script>
+
+<form name="troubleLoginHome" action="#"
+	method="post">
+	<div id="wrapper" class="container">
+		<!-- Header -->
+		<div class="row">
+			<header id="headerContent">
+				<div class="col-lg-3 col-md-3 col-sm-3">
+					<a href="javascript:void(0);" id="sbi_logo">&nbsp;</a>
+				</div>
+				<div class="col-lg-9 col-md-9 col-sm-9">
+					<div class="pull-right">
+						<a href="javascript:void(0);" id="osbi_logo" class="hidden-xs">&nbsp;</a>
+					</div>
+				</div>
+			</header>
+		</div>
+		<!-- //Header -->
+
+		<!-- Navigation -->
+		<div class="row"></div>
+		<!-- //Navigation -->
+
+		<div class="row" id="com_container">
+			<div class="col-lg-12 col-md-12 col-sm-12 no_pad">
+				<h2>Trouble Logging In</h2>
+			</div>
+
+			
+				<div class="form-group">
+					
+					<p class="content_warning">
+						Sorry, unable to process your request.
+					</p>
+				</div>
+			
+			<div class="col-lg-12 col-md-12 col-sm-12">
+			    <p class="content_title">Please note that support for certain issues will be available only after successful login.</p>   
+		
+			</div>
+			
+			<div class="col-lg-12 col-md-12 col-sm-12">
+				<div class="form-group">
+					
+					<div class="col-sm-3">
+						<select name="issueCode" title="Reset Type" class="form-control"
+							style="width: 393px;" onchange="setIssueNature(this.form)">
+							<option value="loginPassword">Forgot My Login Password</option>
+							<option value="ForgotUsername">Forgot Username</option>
+							<option value="ResetLoginPassword">Set Login Password (For requests approved by branch)</option>
+							<option value="resendSMS">Resend User ID through SMS(New
+								Registrants Only)</option>
+							<!-- We removed the password dispatched through courier. so the below option is no longer usage. -->
+							<!-- <option value="resendPassword">I have received my User ID but not password</option> -->
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="common_btn text-center">
+			<input type="hidden" name="issueNature"
+				value="I have received my User ID but not password" /> <input
+				type="hidden" name="bankCodeValue" id="bankCodeValue" value="0" /> <input
+				name="nextStep" type="button" id="nextStep" class="btn btn-default"
+				value="Next" onclick="return submitTroubleLoginHome(this.form)">
+		</div>
+	
+		<div class="info_panel" id="noteCells" style="display: none">
+			<div class="notify_icon">
+				<ul>
+					<li style="list-style-type: none; list-style-image: none"><b><u>Frequently
+								Asked Questions</u></b><br> <br></li>
+					<li>Please see if your questions are answered here before you
+						post a complaint.</li>
+					<li>Please remember your Username and note that your Username
+						cannot be changed in future.</li>
+					<li style="list-style-type: none; list-style-image: none"><br>
+						<b>Question :</b> I have received my username but not password
+						(or) I have received my password but not username.</li>
+					<li style="list-style-type: none; list-style-image: none"><u>Answer
+							:</u> Please note that username and password are dispatched
+						separately and will reach you within 1 week of each other.
+					<li style="list-style-type: none; list-style-image: none"><br>
+						<b>Question :</b> I am not able to log in with the username and
+						password that I received.</li>
+					<li style="list-style-type: none; list-style-image: none"><u>Answer
+							:</u> If you have successfully logged in once and have changed your
+						username and password, then the user id you have received through
+						courier will be deactivated. You need to use the changed user id
+						to login.
+				</ul>
+			</div>
+		</div>
+		<!-- Footer -->
+		<div class="row" id="footer">
+			<footer>
+				<div id="footer_area">
+					<div class="col-lg-4 col-md-4 col-sm-4">
+						<p>&copy; State Bank of India</p>
+					</div>
+				</div>
+			</footer>
+		</div>
+	<!-- //Footer -->
+	</div>
+
+	<script>
+			function setbankcode(formObj) {			
+				document.getElementById('bankCodeValue').value = formObj;
+			}
+			function setIssueNature(formObj) {
+				formObj.issueNature.value = formObj.issueCode.options[formObj.issueCode.selectedIndex].text;
+				var issCode = formObj.issueCode.value;
+			}
+			function submitTroubleLoginHome(formObj) {
+				var bankCode = document.getElementById("bankCodeValue").value;
+				if (bankCode == "") {
+					alert("Please select the bank name");
+				} else {
+					if(formObj.issueCode.value=="loginPassword" || formObj.issueCode.value=="resendSMS" || formObj.issueCode.value=="resendPassword")
+					{
+						document.getElementById('nextStep').disabled = true;
+						document.troubleLoginHome.action = "troublelogindetails.html";
+						document.troubleLoginHome.submit();
+						return true;
+					}
+					else if (formObj.issueCode.value=="ForgotUsername")
+					{
+						document.getElementById('nextStep').disabled = true;
+						document.troubleLoginHome.action = "forgotusername.html";
+						document.troubleLoginHome.submit();
+						return true;
+					}
+					else if (formObj.issueCode.value=="ResetLoginPassword")
+					{
+						document.getElementById('nextStep').disabled = true;
+						document.troubleLoginHome.action = "resetloginpwdwithrefno.html";
+						document.troubleLoginHome.submit();
+						return true;
+					}
+				}
+			}
+		</script>
+<input type="hidden" name="ej6m" id="ej6m" value="i6dad5lajphv4dl6dcthf5plecka873g" />
+</form>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       

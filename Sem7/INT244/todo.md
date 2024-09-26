@@ -4,3 +4,5 @@
 
 
 - [-]  create a `ping_sweep.sh`
+
+- [-] create a `simple_ransomware` (Madara)

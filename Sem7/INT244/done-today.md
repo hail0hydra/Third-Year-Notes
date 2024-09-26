@@ -154,3 +154,85 @@ nmap example.com -oN / -oX / -Os
 > `dig` better 👻
 
 <br>
+<br>
+<br>
+
+---
+
+[ 10 Sep 2024 ]
+
+- Installed Nessus.
+
+
+<br>
+<br>
+<br>
+
+---
+
+[ 12 Sep 2024 ]
+
+-  What is SNMP. What info can be gathered b doing SNMP, LDAP enumeration
+
+- System Hacking. (Starting with this today)
+
+- password cracking.
+
+- Distributed Network Attack
+
+- Salting
+
+- How to denfend against password cracking?
+
+<br>
+
+- Privilege Escalation
+
+- Using DLL Hijacking 💉
+
+- By exploiting CVEs
+
+- Unquoted Service Path
+
+- UAC bypassing
+
+<br>
+<br>
+
+- How to defend against PrivEsc.
+
+<br>
+
+- What are rootkits?
+
+- How it works (functioning and diagram)
+
+- How to defend against rootkits?
+
+<br>
+
+- What is Steganography
+
+<br>
+
+- __Steganalysis__
+
+<br>
+<br>
+
+<!-- Sep 17 2024 -->
+
+<br>
+<br>
+
+- [Using]('SystemHackingUpdated.pptx')
+
+- [Using](MalwareUpdated.pptx)
+
+- What are [APTs](https://www.crowdstrike.com/cybersecurity-101/advanced-persistent-threat-apt/)?
+
+
+<br>
+<br>
+
+- Started __Malware Analysis__

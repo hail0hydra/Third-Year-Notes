@@ -1,0 +1,114 @@
+
+
+
+
+
+
+
+<title>State Bank of India</title>
+
+<!-- Mirrored from retail.onlinesbi.sbi/retail/newuserreg.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 18 Sep 2024 05:19:06 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="https://retail.onlinesbi.sbi/sbijava/retail/css/style.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" type="text/javascript" src="https://retail.onlinesbi.sbi/sbijava/retail/js/troubleLogin.js"></script>
+
+<link rel="shortcut icon" href="https://retail.onlinesbi.sbi/sbijava/retail/images/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="https://retail.onlinesbi.sbi/sbijava/retail/css/bootstrap.min-3.4.1.css" type="text/css" />
+<script type="text/javascript" src="https://retail.onlinesbi.sbi/sbijava/retail/js/common/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="https://retail.onlinesbi.sbi/sbijava/retail/js/common/bootstrap.min-3.4.1.js"></script>
+<script type="text/javascript"	src="https://retail.onlinesbi.sbi/sbijava/retail/js/common/enscroll-0.6.2.js"></script>
+
+<form name="newUserRegHome" action="https://retail.onlinesbi.sbi/retail/newUserRegDetails.htm"
+	method="post">
+	<div id="wrapper" class="container">
+		<!-- Header -->
+		<div class="row">
+			<header id="headerContent">
+				<div class="col-lg-3 col-md-3 col-sm-3">
+					<a href="javascript:void(0);" id="sbi_logo">&nbsp;</a>
+				</div>
+				<div class="col-lg-9 col-md-9 col-sm-9">
+					<div class="pull-right">
+						<a href="javascript:void(0);" id="osbi_logo" class="hidden-xs">&nbsp;</a>
+					</div>
+				</div>
+			</header>
+		</div>
+		<!-- //Header -->
+
+		<!-- Navigation -->
+		<div class="row"></div>
+		<!-- //Navigation -->
+
+		<div class="row" id="com_container">
+			<div class="col-lg-12 col-md-12 col-sm-12 no_pad">
+				<h2>New User? Register Here/Activate (For Retail customers only)</h2>
+			</div>
+
+			
+						
+			<div class="col-lg-12 col-md-12 col-sm-12">
+				<div class="form-group">
+					
+					<div class="col-sm-3">
+						<select name="issueCode" title="NewUserReg" class="form-control"
+							style="width: 200px;" onchange="setIssueNature(this.form)">
+							<option value="registerHere">New User Registration</option>
+							<option value="activationOfUserName">Activation Of Username</option>
+							
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="common_btn text-center">
+			<input
+				type="hidden" name="bankCodeValue" id="bankCodeValue" value="0" /> <input
+				name="nextStep" type="button" id="nextStep" class="btn btn-default"
+				value="Next" onclick="return submitNewUserReg(this.form)">
+		</div>
+	
+		
+		<!-- Footer -->
+		<div class="row" id="footer">
+			<footer>
+				<div id="footer_area">
+					<div class="col-lg-4 col-md-4 col-sm-4">
+						<p>&copy; State Bank of India</p>
+					</div>
+				</div>
+			</footer>
+		</div>
+	<!-- //Footer -->
+	</div>
+
+	<script>			
+			function setIssueNature(formObj) {
+				formObj.issueNature.value = formObj.issueCode.options[formObj.issueCode.selectedIndex].text;
+				var issCode = formObj.issueCode.value;
+			}
+			function submitNewUserReg(formObj) {
+				
+				var bankCode = document.getElementById("bankCodeValue").value;
+				if (bankCode == "") {
+					alert("Please select the bank name");
+				} else {
+					document.getElementById('nextStep').disabled = true;
+					if(formObj.issueCode.options[formObj.issueCode.selectedIndex].value == "registerHere")
+					{
+						document.newUserRegHome.action = "userdrivenregdetails.html";
+					}
+					else
+					{
+						document.newUserRegHome.action = "newuserregtempusername.html";
+
+					}
+					document.newUserRegHome.submit();
+					return true;
+				}
+			}
+		</script>
+<input type="hidden" name="ej6m" id="ej6m" value="i6dad5lajphv4dl6dcthf5plecka873g" />
+</form>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       

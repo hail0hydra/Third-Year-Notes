@@ -236,3 +236,48 @@ nmap example.com -oN / -oX / -Os
 <br>
 
 - Started __Malware Analysis__
+
+<br>
+<br>
+
+---
+
+<br>
+<br>
+
+
+<!-- 01 Oct 2024 -->
+
+<br>
+<br>
+
+- Discussed __MAC FLOODING__
+
+- Discussed __SWITCH PORT STEALING__ 
+
+- DHCP Starvation Attack
+
+- Performing `Wireshark` practical.
+
+<br>
+<br>
+
+---
+
+
+<br>
+<br>
+<br>
+
+<!-- 03 OCt 2024 -->
+
+
+<br>
+<br>
+
+
+- Starting with _Social Engineering_ 👿
+
+- Phases of social engineering attack
+
+- Types of Social Engineering 

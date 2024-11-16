@@ -15,7 +15,7 @@
 
 - [This](notes.md) was supposed to be notes but it ain't.
 
-- List of some of the practicals that can come in `CA2` and are performed already. [Here](/Sem7/INT245/practicals.md)
+- List of some of the practicals that can come in `CA2` and are performed already. [Here](./practicals.md)
 
 - CA dates and all [🐮](CA.md)
 
@@ -63,11 +63,76 @@
 
     - [InformationIsBeautiful](https://informationisbeautiful.net/visualizations/worlds-biggest-data-breaches-hacks/)
 
+<br>
+<br>
+
+
+- mentioned __SIM CLONING__ as being very popular now-a-days.
+
+<br>
+
+---
+
+<br>
+
+- While going through the regular challs, I saw a sus site that can have some knowledge. [Here]("https://blog.csdn.net/qq_45894840/article/details/129177099")
 
 
 <br>
 <br>
 
+---
+
+<br>
+<br>
+
+<!-- Sep 28 2024 -->
 
 
+<br>
+<br>
+<br>
+<br>
+
+
+<!-- Oct 16 2024 -->
+
+<br>
+<br>
+
+
+- Got a task to do steganorgraphy to hide a file in a media (image, audio)
+
+<br>
+<br>
+<br>
+
+<!-- Oct 18 2024 -->
+
+- last class a practical on password cracking from files such as excel, word, etc was done. I was absent.
+
+- Tool name: something like `advanced * office * Key `
+
+<br>
+<br>
+
+- Bypassing Lock Out Limits.
+
+- Files should be properly formatted (the teacher said {for capstone})
+
+<br>
+<br>
+
+<!-- 23 Oct 24 -->
+
+<br>
+<br>
+
+
+<!-- Nov 08 2024 -->
+
+<br>
+<br>
+
+- Got a scenario question on TheHarvester
 

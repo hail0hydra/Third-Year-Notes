@@ -281,3 +281,98 @@ nmap example.com -oN / -oX / -Os
 - Phases of social engineering attack
 
 - Types of Social Engineering 
+
+- Solved [this THM lab](https://tryhackme.com/r/room/commonattacks)
+
+- Also did the `blue-lab` attached with it (long time ago 🙂).
+
+
+<br>
+<br>
+
+<!-- 10 Oct 2024 -->
+
+<br>
+<br>
+
+- Social Engineering Continued
+
+- Talked about Insider Threats
+
+    - IOCs for Insider Threats.
+
+<br>
+<br>
+
+<!-- 24 Oct 2024 -->
+
+
+<br>
+<br>
+
+
+## Session Hijacking
+
+- Why is session hijacking successful?
+
+- Two types of Session Hijacking
+
+- In OSI Model
+
+    1. Network - Level Hijacking (interception of packets)
+
+    2. Application - Level Hijacking (HTTP user session)
+
+
+- `Spoofing` vs `Hijacking`
+
+- ___Man in the Browser Attack___
+
+<br>
+<br>
+
+### Using Client Side Attacks
+
+1. Cross Site Scripting
+
+2. MITM vs Replay Attacks
+
+3. Performing DOS attack with SYN flooding
+
+<br>
+<br>
+<br>
+
+<!-- 05 Nov 2024 -->
+
+<br>
+<br>
+
+### Hacking Web Servers
+
+<br>
+<br>
+
+- Why are web servers compromised?
+
+
+<br>
+<br>
+
+
+<!-- 07 Nov 2024 -->
+
+
+<br>
+
+### Website Mirroring 🕸
+
+<br>
+
+- [httrack](https://github.com/xroche/httrack) 🐧
+
+<br>
+
+- SQL Injection 👽
+
+<br>

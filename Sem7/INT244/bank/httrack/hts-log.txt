@@ -1,0 +1,47 @@
+HTTrack3.49-5 launched on Thu, 07 Nov 2024 09:30:54 at https://vdbprivate.com/en/myaccount/login.php
+(winhttrack https://vdbprivate.com/en/myaccount/login.php -W -O "bank/httrack" -%v )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+09:31:15	Error: 	"Not Found" (404) at link https://vdbprivate.com/en/myaccount/javax.faces.resource/theme.cssab55.css?ln=primefaces-aristo (from https://vdbprivate.com/en/myaccount/login.php)
+09:31:15	Error: 	"Not Found" (404) at link https://vdbprivate.com/en/myaccount/javax.faces.resource/jquery/jquery.jse3ba.xhtml?ln=primefaces&v=5.0 (from https://vdbprivate.com/en/myaccount/login.php)
+09:31:15	Error: 	"Not Found" (404) at link https://vdbprivate.com/en/myaccount/javax.faces.resource/primefaces.jse3ba.xhtml?ln=primefaces&v=5.0 (from https://vdbprivate.com/en/myaccount/login.php)
+09:31:15	Error: 	"Not Found" (404) at link https://vdbprivate.com/en/myaccount/javax.faces.resource/primefaces.csse3ba.css?ln=primefaces&v=5.0 (from https://vdbprivate.com/en/myaccount/login.php)
+09:31:15	Error: 	"Not Found" (404) at link https://vdbprivate.com/en/myaccount/javax.faces.resource/jquery/jquery-plugins.jse3ba.xhtml?ln=primefaces&v=5.0 (from https://vdbprivate.com/en/myaccount/login.php)
+09:31:15	Error: 	"Not Found" (404) at link https://vdbprivate.com/en/myaccount/javax.faces.resource/keyboard/keyboard.csse3ba.css?ln=primefaces&v=5.0 (from https://vdbprivate.com/en/myaccount/login.php)
+09:31:15	Error: 	"Not Found" (404) at link https://vdbprivate.com/en/myaccount/javax.faces.resource/keyboard/keyboard.jse3ba.xhtml?ln=primefaces&v=5.0 (from https://vdbprivate.com/en/myaccount/login.php)
+09:31:15	Error: 	"Not Found" (404) at link https://vdbprivate.com/en/myaccount/javax.faces.resource/watermark/watermark.csse3ba.css?ln=primefaces&v=5.0 (from https://vdbprivate.com/en/myaccount/login.php)
+09:31:15	Error: 	"Not Found" (404) at link https://vdbprivate.com/en/myaccount/javax.faces.resource/watermark/watermark.jse3ba.xhtml?ln=primefaces&v=5.0 (from https://vdbprivate.com/en/myaccount/login.php)
+09:31:15	Error: 	"Not Found" (404) at link https://vdbprivate.com/en/myaccount/resources/images/favicon.ico (from https://vdbprivate.com/en/myaccount/login.php)
+09:31:47	Error: 	"Not Found" (404) at link https://vdbprivate.com/en/myaccount/resources/themes/netteller-theme/images/ui-bg_flat_75_ffffff_40x100.png (from https://vdbprivate.com/en/myaccount/resources/themes/netteller-theme/netteller-theme.css)
+09:31:47	Error: 	"Not Found" (404) at link https://vdbprivate.com/en/myaccount/resources/themes/netteller-theme/images/ui-bg_glass_75_dadada_1x400.png (from https://vdbprivate.com/en/myaccount/resources/themes/netteller-theme/netteller-theme.css)
+09:31:47	Error: 	"Not Found" (404) at link https://vdbprivate.com/en/myaccount/resources/themes/netteller-theme/images/ui-bg_glass_55_fbf9ee_1x400.png (from https://vdbprivate.com/en/myaccount/resources/themes/netteller-theme/netteller-theme.css)
+09:31:47	Error: 	"Not Found" (404) at link https://vdbprivate.com/en/myaccount/resources/themes/netteller-theme/images/ui-bg_inset-soft_95_fef1ec_1x100.png (from https://vdbprivate.com/en/myaccount/resources/themes/netteller-theme/netteller-theme.css)
+09:31:47	Error: 	"Not Found" (404) at link https://vdbprivate.com/en/myaccount/resources/themes/netteller-theme/images/ui-icons_6da8d5_256x240.png (from https://vdbprivate.com/en/myaccount/resources/themes/netteller-theme/netteller-theme.css)
+09:31:47	Error: 	"Not Found" (404) at link https://vdbprivate.com/en/myaccount/resources/themes/netteller-theme/images/ui-bg_flat_0_aaaaaa_40x100.png (from https://vdbprivate.com/en/myaccount/resources/themes/netteller-theme/netteller-theme.css)
+09:31:47	Error: 	"Not Found" (404) at link https://vdbprivate.com/en/myaccount/resources/images/orange_arrow.html (from https://vdbprivate.com/en/myaccount/resources/themes/netteller-theme/netteller.css)
+09:31:47	Error: 	"Not Found" (404) at link https://vdbprivate.com/en/myaccount/resources/images/menu_hover_effect.png (from https://vdbprivate.com/en/myaccount/resources/themes/netteller-theme/netteller.css)
+09:31:47	Error: 	"Not Found" (404) at link https://vdbprivate.com/en/myaccount/resources/images/gray_icon.gif (from https://vdbprivate.com/en/myaccount/resources/themes/netteller-theme/netteller.css)
+09:31:47	Error: 	"Not Found" (404) at link https://vdbprivate.com/en/myaccount/resources/images/buttons.png (from https://vdbprivate.com/en/myaccount/resources/themes/netteller-theme/netteller.css)
+09:31:47	Error: 	"Not Found" (404) at link https://vdbprivate.com/en/myaccount/resources/images/headerSeparator.png (from https://vdbprivate.com/en/myaccount/resources/themes/netteller-theme/netteller.css)
+09:31:47	Error: 	"Not Found" (404) at link https://vdbprivate.com/en/myaccount/resources/images/home.png (from https://vdbprivate.com/en/myaccount/resources/themes/netteller-theme/netteller.css)
+09:31:47	Error: 	"Not Found" (404) at link https://vdbprivate.com/en/myaccount/resources/images/logout.png (from https://vdbprivate.com/en/myaccount/resources/themes/netteller-theme/netteller.css)
+09:31:47	Error: 	"Not Found" (404) at link https://vdbprivate.com/en/myaccount/resources/images/ad_inside.jpg (from https://vdbprivate.com/en/myaccount/resources/themes/netteller-theme/netteller.css)
+09:31:47	Error: 	"Not Found" (404) at link https://vdbprivate.com/en/myaccount/resources/images/social.png (from https://vdbprivate.com/en/myaccount/resources/themes/netteller-theme/netteller.css)
+09:31:47	Error: 	"Not Found" (404) at link https://vdbprivate.com/en/myaccount/resources/images/exportPdf.png (from https://vdbprivate.com/en/myaccount/resources/themes/netteller-theme/netteller.css)
+09:31:47	Error: 	"Not Found" (404) at link https://vdbprivate.com/en/myaccount/resources/images/exportExcel.png (from https://vdbprivate.com/en/myaccount/resources/themes/netteller-theme/netteller.css)
+09:31:47	Error: 	"Not Found" (404) at link https://vdbprivate.com/en/myaccount/resources/images/settings.png (from https://vdbprivate.com/en/myaccount/resources/themes/netteller-theme/netteller.css)
+09:31:47	Error: 	"Not Found" (404) at link https://vdbprivate.com/en/myaccount/resources/images/find.gif (from https://vdbprivate.com/en/myaccount/resources/themes/netteller-theme/netteller.css)
+09:31:47	Error: 	"Not Found" (404) at link https://vdbprivate.com/en/myaccount/images/scrollbars.css (from https://vdbprivate.com/en/myaccount/signup.php)
+09:31:47	Error: 	"Not Found" (404) at link https://vdbprivate.com/en/myaccount/images/Background_image_v5_1130x1663.jpg (from https://vdbprivate.com/en/myaccount/signup.php)
+09:31:47	Error: 	"Not Found" (404) at link https://vdbprivate.com/en/myaccount/resources/themes/netteller-theme/icons/fonts/fontawesome-webfont.eot?v=4.3.0 (from https://vdbprivate.com/en/myaccount/resources/themes/netteller-theme/icons/css/font-awesome.css)
+09:31:47	Error: 	"Not Found" (404) at link https://vdbprivate.com/en/myaccount/resources/themes/netteller-theme/icons/fonts/fontawesome-webfont.eot? (from https://vdbprivate.com/en/myaccount/resources/themes/netteller-theme/icons/css/font-awesome.css)
+09:31:47	Error: 	"Not Found" (404) at link https://vdbprivate.com/en/myaccount/resources/themes/netteller-theme/icons/fonts/fontawesome-webfont.woff2?v=4.3.0 (from https://vdbprivate.com/en/myaccount/resources/themes/netteller-theme/icons/css/font-awesome.css)
+09:31:47	Error: 	"Not Found" (404) at link https://vdbprivate.com/en/myaccount/resources/themes/netteller-theme/icons/fonts/fontawesome-webfont.woff?v=4.3.0 (from https://vdbprivate.com/en/myaccount/resources/themes/netteller-theme/icons/css/font-awesome.css)
+09:31:47	Error: 	"Not Found" (404) at link https://vdbprivate.com/en/myaccount/resources/themes/netteller-theme/icons/fonts/fontawesome-webfont.ttf?v=4.3.0 (from https://vdbprivate.com/en/myaccount/resources/themes/netteller-theme/icons/css/font-awesome.css)
+
+HTTrack Website Copier/3.49-5 mirror complete in 53 seconds : 51 links scanned, 14 files written (807948 bytes overall) [456856 bytes received at 8619 bytes/sec], 530311 bytes transferred using HTTP compression in 46 files, ratio 27%, 25.5 requests per connection
+(36 errors, 0 warnings, 0 messages)

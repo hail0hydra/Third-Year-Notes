@@ -1,0 +1,4 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+vdbprivate.com	TRUE	/	FALSE	1999999999	PHPSESSID	rc3e9dfdfdt36bul2muohkpc01
+

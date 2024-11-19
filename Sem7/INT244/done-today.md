@@ -376,3 +376,71 @@ nmap example.com -oN / -oX / -Os
 - SQL Injection 👽
 
 <br>
+<br>
+
+<!-- 19 Nov 2024 -->
+
+<br>
+<br>
+
+
+## Hacking Wireless Networks
+
+<br>
+<br>
+
+### Wifi Authentication Modes
+
+1. Open System Auth - Open Network, no passwd
+
+2. Shared Key Auth - requires passwd
+
+3. __Using a Centralised Auth Server__ -  RADIUS (Remote Auth Dial In Server) server for centralising the network. why is this required? For 2 way auth, giving username:password for logging.
+
+<br>
+<br>
+
+### Types of Wireless Antennas
+
+1. Directional - Sinle Direction
+
+2. Omnidirectional - All directions
+
+3. Parabolic 
+
+<br>
+<br>
+
+### Types of Wireless Encryption
+
+- WEP, WPA, WPA2, WPA3
+ 
+<br>
+
+### Wifi Chalking
+
+```wash``` command
+
+<br>
+
+### GPS Mapping Tools
+
+<br>
+
+### Wifi Attacks
+
+<br>
+
+### Bluetooth Stack
+
+   - Bluetooth Hacking Techniques
+
+1. BlueJacking
+
+<br>
+
+### Wireless IPS
+
+<br>
+
+
